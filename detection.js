@@ -1,4 +1,4 @@
-// Browser addDev - Variables
+// Browser/Device Detection - Variables
 var UA = window.navigator.userAgent,
 chrome = navigator.userAgent.search('Chrome'),
 firefox = navigator.userAgent.search('Firefox'),
@@ -23,7 +23,7 @@ var addDevClass = function (className) {
     }
 }
 
-// Browser addDev - Attach browser specific class to HMTL tag
+// Browser/Device Detection - Attach browser specific class(es)
 if (msie > 0 || trident > 0 || edge > 0) {
     addDevClass('isIE');
     if (ie11 > 0) {
