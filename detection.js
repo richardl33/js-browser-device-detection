@@ -1,7 +1,8 @@
 // Browser addDev - Variables
 var UA = window.navigator.userAgent,
-chrome = navigator.userAgent.search("Chrome"),
-firefox = navigator.userAgent.search("Firefox"),
+chrome = navigator.userAgent.search('Chrome'),
+firefox = navigator.userAgent.search('Firefox'),
+safari = UA.indexOf('safari'),
 msie = UA.indexOf('MSIE '),
 trident = UA.indexOf('Trident/'),
 edge = UA.indexOf('Edge/'),
@@ -28,10 +29,12 @@ if (msie > 0 || trident > 0 || edge > 0) {
     if (ie11 > 0) {
         addDevClass('isIE11');
     }
-} else if (firefox > 0) {
-    addDevClass('isFF');
 } else if (chrome > 0) {
     addDevClass('isChrome');
+} else if (firefox > 0) {
+    addDevClass('isFF');
+} else if (safari > 0) {
+    addDevClass('isSafari');
 } else if (iOS > 0) {
     addDevClass('isIOS');
     if (iPad > 0) {
